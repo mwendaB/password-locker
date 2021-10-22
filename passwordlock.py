@@ -83,8 +83,17 @@ def main():
                  for user in display_user():
                      print(f"{user.user_name}")
                      print('\n')
-                     
+
             else:
                 print('\n')
                 print("You dont seem to have any contacts saved yet")
                 print('\n')
+
+        elif short_code == 'del':
+            print("Want to delete account? 'y' 'n'")
+            yes = input()
+            if yes == 'y':
+                del_user()
+                print("Deleted successfully")
+            else:
+                print("Account not found") 
