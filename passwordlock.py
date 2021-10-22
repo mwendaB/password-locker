@@ -43,3 +43,10 @@ def main():
 
                 print("confirm password")
                 confirm_password = input()
+
+            
+            while create_password != confirm_password:
+                print("Password dont match")
+                print("Enter your password")
+                create_password = input()
+                confirm_password = input()
