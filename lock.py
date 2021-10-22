@@ -66,7 +66,29 @@ class TestCredentials(unittest.TestCase):
     def tearDown(self):
         User.users_list = []
         Credential.credentials_list = []
+     
+    
+    def test_display_credentials(self):
+        self.new_credential.save_credentials()
+        instagram = Credential('Eugine', 'instagram', 'Abong', 'fozar')
+        instagram.save_credentials()
+        self.assertEqual(Credential.display_credentials(),
+                         Credential.credentials_list)
 
+
+    def test_search_social_media(self):
+        self.new_credential.save_credentials()
+        instagram = Credential('Eugine', 'instagram', 'Abong', 'fozar')
+        instagram.save_credentials()
+        credential_exists = Credential.search_social_media('Instagram')
+        self.assertEqual(credential_exists, instagram)
+
+    def test_copy_password(self):  
+        self.new_credential.save_credentials()
+        instagram = Credential('Eugine', 'Instagram', 'Abong', 'fozar')
+        instagram.save_credentials()
+        Credential.copy_password('instagram')
+        self.assertEqual(self.new_credential.password, pyperclip.paste())
 
 
 
