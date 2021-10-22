@@ -29,3 +29,21 @@ class Credential:
             if (user.first_name == first_name and user.password == password):
                 active_user = user.first_name
         return active_user
+
+    @classmethod
+    def display_credentials(cls):
+        return cls.credentials_list
+    
+    @classmethod
+    def search_social_media(cls, social_media):
+        
+        for credential in cls.credentials_list:
+            if credential.social_media == social_media:
+                return credential
+    
+    @classmethod 
+    def copy_password(cls, social_media):
+       
+        collect_password = Credential.search_social_media(social_media)
+        return pyperclip.copy(collect_password.password) 
+
