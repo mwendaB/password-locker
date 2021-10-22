@@ -3,7 +3,6 @@ This app has been created using python3.9.7
 ## Author
 Bian Mwenda
 
-#### By **Bradley Cunninghum Odera**
 ## Description
 This is a command line app that generates accounts.
 
