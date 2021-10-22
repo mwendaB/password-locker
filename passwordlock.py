@@ -75,3 +75,16 @@ def main():
                 print("login Success")
                 print('\n')
                 print("-"*30)
+
+        elif short_code == 'disp':
+            if display_user():
+                 print("Here is a list of all your users")
+                 print('\n')
+                 for user in display_user():
+                     print(f"{user.user_name}")
+                     print('\n')
+                     
+            else:
+                print('\n')
+                print("You dont seem to have any contacts saved yet")
+                print('\n')
