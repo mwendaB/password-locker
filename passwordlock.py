@@ -15,3 +15,13 @@ def authenticate_user(first_name, password):
      confirm_user = Credential.confirm_user(first_name, password)
      return confirm_user
 
+def generate_password():
+    generate_password = Credential.generate_password()
+    return generate_password
+
+
+def create_credential(user_name, social_media, account_name, password):
+    
+    new_credential = Credential(
+        user_name, social_media, account_name, password)
+    return new_credential 
