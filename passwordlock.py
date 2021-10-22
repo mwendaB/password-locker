@@ -15,3 +15,10 @@ def del_user(user):
 
 def save_User(user):
     user.save_user()
+
+
+def main():
+    while True:
+        print("Welcome to password lock")
+        print('-'*60)
+        print('\n')
