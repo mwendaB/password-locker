@@ -44,8 +44,8 @@ def copy_password(social_media):
 
 
 def main():
-		print('Welcome to Password Locker.')
 		print('')
+		print('Welcome to Password Locker.')
 		print('')
 		print(' ')
 		while True:

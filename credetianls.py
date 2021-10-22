@@ -10,6 +10,15 @@ class Credential:
     
     credentials_list = []
 
+    @classmethod
+    def confirm_user(cls, first_name, password):
+        
+        active_user = ''
+        for user in User.users_list:
+            if (user.first_name == first_name and user.password == password):
+                active_user = user.first_name
+        return active_user
+
     def __init__(self, user_name, social_media, account_name, password):
         self.user_name = user_name
         self.social_media = social_media
@@ -28,14 +37,7 @@ class Credential:
         return generate_password
 
     
-    @classmethod
-    def confirm_user(cls, first_name, password):
-        
-        active_user = ''
-        for user in User.users_list:
-            if (user.first_name == first_name and user.password == password):
-                active_user = user.first_name
-        return active_user
+ 
 
     @classmethod
     def display_credentials(cls):
