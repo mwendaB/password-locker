@@ -103,3 +103,5 @@ def main():
         else:
             print("Enter valid code to continue")
 
+if __name__ == '__main__':
+    main()         
