@@ -1,3 +1,10 @@
+import pyperclip 
+import string
+import random
+
+from user import User
+
+
 class Credential:
     
     
