@@ -59,6 +59,13 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credential.account_name, 'Abongo')
         self.assertEqual(self.new_credential.password, 'fozar')
 
+    def test_save_credentials(self):
+        self.new_credential.save_credentials()
+        self.assertEqual(len(Credential.credentials_list), 1)
+
+    def tearDown(self):
+        User.users_list = []
+        Credential.credentials_list = []
 
 
 
