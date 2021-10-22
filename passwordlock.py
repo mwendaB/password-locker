@@ -97,3 +97,9 @@ def main():
                 print("Deleted successfully")
             else:
                 print("Account not found") 
+
+        elif short_code == 'ex':
+            break
+        else:
+            print("Enter valid code to continue")
+
