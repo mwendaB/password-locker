@@ -26,8 +26,6 @@ def main():
         short_code =input().lower()
         print('\n')
 
-
-
         if short_code == 'ca':
             print("create username")
             created_user_name = input()
@@ -36,5 +34,12 @@ def main():
             if yes == "y": 
                 pass_code = string.ascii_letters
                 create_password = "".join(random.choice(pass_code) for i in range(10)) 
-                print("pasword Generated!!!") 
+                print("password Generated!!!") 
                 continue       
+
+            else:
+                print("create password")
+                create_password = input()
+
+                print("confirm password")
+                confirm_password = input()
