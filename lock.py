@@ -28,6 +28,38 @@ class TestUser(unittest.TestCase):
     
     def test_delete_user(self): 
         self.new_user.save_user()
-        test_user = User("Vanessa", "james", "keishamapesa") 
+        test_user = User("Eugine", "Abongo", "fozar") 
         test_user.save_user()
+        self.new_contact.delete_contact()
+        self.assertEqual(len(User.contact_list), 1) 
+
+
+
+class TestCredentials(unittest.TestCase):
+
+
+    def test_confirm_user(self):
+        
+        self.new_user = User('Brian', 'Mwenda', 'mwendaB')
+        self.new_user.save_user()
+        userX = User('Brian', 'Mwenda', 'mwendaB')
+        userX.save_user()
+        active_user = Credential.confirm_user('Brian', 'mwendaB')
+        self.assertTrue(active_user)
+    
+    def setUp(self):
+       
+        self.new_credential = Credential(
+            'Eugine', 'Instagram', 'Abongo', 'fozar')
+
+
+    def test__init__(self):
+        self.assertEqual(self.new_credential.user_name, 'Eugine')
+        self.assertEqual(self.new_credential.social_media, 'Instagram')
+        self.assertEqual(self.new_credential.account_name, 'Abongo')
+        self.assertEqual(self.new_credential.password, 'fozar')
+
+
+
+
 
