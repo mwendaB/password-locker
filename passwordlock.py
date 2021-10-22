@@ -22,7 +22,7 @@ def main():
         print("Welcome to password lock")
         print('-'*60)
         print('\n')
-        print("To create a new user account use 'ca': To login to your account use: 'lg': To delete user use: 'dl' To display user use: 'di' To exit use: 'ex'")
+        print("To create a new user account use 'ca': To login to your account use: 'lg': To delete user use: 'del' To display user use: 'disp' To exit use: 'ex'")
         short_code =input().lower()
         print('\n')
 
@@ -50,3 +50,28 @@ def main():
                 print("Enter your password")
                 create_password = input()
                 confirm_password = input()
+            else:
+              print(f"Welcome {user_name_entered}.Login was successful")
+        
+
+        elif short_code == 'lg':
+            print("welcome")
+            print("Enter user name")
+            default_user_name = input()
+
+            print("enter password")
+            default_password = input()
+            print('\n')
+
+            while default_user_name != 'mwendaB' or default_password !='00000':
+                print("Wrong user name or password. Username 'mwendaB' and password '00000' ")
+                print("enter username")
+                default_user_name =input()
+                print("enter password")
+                default_password = input()
+                print('\n')
+
+            else:
+                print("login Success")
+                print('\n')
+                print("-"*30)
