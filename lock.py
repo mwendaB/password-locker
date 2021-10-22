@@ -1,13 +1,8 @@
-import random
-import string
+import unittest
+import pyperclip
+from user import User
+from credetianls import Credential
 
-class Credentials:
-    Credentials_list = []
-   
-    def __init__ (self, account_username, account_password):
-        self.account_username = account_username
-        self.account_password = account_password
-
-    def delete_logins(self):
-        
-        Credentials.credentials_list.remove(self)
+class TestUser(unittest.TestCase):
+    def setUp(self):
+        self.new_user = User('Brian', 'Mwenda', 'mwendaB')
