@@ -22,3 +22,4 @@ def main():
         print("Welcome to password lock")
         print('-'*60)
         print('\n')
+        print("To create a new user account use 'ca': To login to your account use: 'lg': To delete user use: 'dl' To display user use: 'di' To exit use: 'ex'")
