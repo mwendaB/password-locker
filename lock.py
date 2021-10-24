@@ -89,10 +89,7 @@ class TestCredentials(unittest.TestCase):
         instagram.save_credentials()
         Credential.copy_password('instagram')
         self.assertEqual(self.new_credential.password, pyperclip.paste())
-    
-
-
-
+        
 
 if __name__ == '__main__':
     unittest.main()
