@@ -13,6 +13,7 @@ This is a command line app that generates accounts.
 * No web dependencies needed.
 * Run in terminal using the command $ python3 passwordlock.py
 
+
 ## Known Bugs
 Generate credentials for the user traces back to errors on arguments missing. Feel free to clone and help fix the error
 
