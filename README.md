@@ -11,7 +11,7 @@ This is a command line app that generates accounts.
 * Install pip
 * Clone the repo using this url https://github.com/mwendaB/password-locker
 * No web dependencies needed.
-* Run in terminal
+* Run in terminal using the command $ python3 passwordlock.py
 
 ## Known Bugs
 Generate credentials for the user traces back to errors on arguments missing. Feel free to clone and help fix the error
