@@ -4,7 +4,7 @@ This app has been created using python3.9.7
 Bian Mwenda
 
 ## Description
-This is a command line app that generates accounts.
+This is a command line app that generates accounts where a user can log in, create or delete their accounts.
 
 ## Setup/Installation Requirements
 * Open your terminal
