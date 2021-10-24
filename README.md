@@ -7,8 +7,7 @@ Bian Mwenda
 This is a command line app that generates accounts.
 
 ## Setup/Installation Requirements
-* Internet connection.
-* Install pip
+* Open your terminal
 * Clone the repo using this url https://github.com/mwendaB/password-locker
 * No web dependencies needed.
 * Run in terminal using the command $ python3 passwordlock.py
