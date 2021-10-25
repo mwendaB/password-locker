@@ -1,7 +1,7 @@
 # Password-Locker
 This app has been created using python3.9.7
 ## Author
-Bian Mwenda
+Brian Mwenda
 
 ## Description
 This is a command line app that generates accounts where a user can log in, create or delete their accounts.
@@ -14,7 +14,8 @@ This is a command line app that generates accounts where a user can log in, crea
 
 
 ## Known Bugs
-Generate credentials for the user traces back to errors on arguments missing. Feel free to clone and help fix the error
+I havent encountered any bugs.
+INcase you come across any feel free to correct me via Email.
 
 ## Technologies Used
 Python3.9.7<br>
@@ -23,7 +24,7 @@ Pip
 
 ## Support and contact details
 Incase of any contribution, comment or question please email me:<br>
-**Brianmwenda255@gmail.com**
+**brianmwenda255@gmail.com**
 
 ### License
 [MIT](License)

@@ -1,5 +1,5 @@
-from user import User
-from credetianls import Credential
+from user import User, Credential
+
 
 
 def create_user(firstname, lastname, password):
@@ -16,7 +16,7 @@ def delete_user(user):
 
 
 def authenticate_user(first_name, password):
-    confirm_user = Credential.confirm_user(first_name, password)
+    confirm_user = User.confirm_user(first_name, password)
     return confirm_user
 
 
@@ -66,7 +66,7 @@ def main():
 				save_user(create_user(first_name, last_name, password))
 				print(" ")
 				print(
-					f'A new Password Locker Account Created for: {first_name} {last_name} which will be accessed using this password: {password}')
+					*f'A new Password Locker Account Created for: {first_name} {last_name} which will be accessed using this password: {password}')
 			elif short_code == 'li':
 				print("-"*70)
 				print(' ')

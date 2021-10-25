@@ -1,7 +1,8 @@
 import unittest
 import pyperclip
-from user import User
-from credetianls import Credential
+
+from user import User, Credential
+
 
 class TestUser(unittest.TestCase):
     def setUp(self):
