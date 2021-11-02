@@ -2,17 +2,21 @@ from user import User, Credentials
 
 
 
-def create_user(firstname, lastname, password):
-    new_user = User(firstname, lastname, password)
+def create_new_user(username,password):
+    new_user = User(username,password)
     return new_user
 
-
 def save_user(user):
-    User.save_user(user)
+    user.save_user()
 
 
-def delete_user(user):  
-    user.delete_user()
+def display_user():
+    return User.display_user()
+
+
+def login_user(username,password):
+    check_user = Credentials.verify_user(username,password)
+    return check_user
 
 
 def authenticate_user(first_name, password):
