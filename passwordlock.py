@@ -82,7 +82,7 @@ def main():
             print(f"Hello {username}.Welcome To PassWord Locker Manager")  
             print('\n')
     while True:
-        print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
+        print("Use these short codes:\n cc - Create a new credential \n disp - Display Credentials \n find - Find a credential \n gen - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
         short_code = input().lower().strip()
         if short_code == "cc":
             print("Create New Credential")
@@ -92,12 +92,12 @@ def main():
             print("Your Account username")
             userName = input()
             while True:
-                print(" TP - To type your own pasword if you already have an account:\n GP - To generate random Password")
+                print(" ty - To type your own pasword if you already have an account:\n gen - To generate random Password")
                 password_Choice = input().lower().strip()
-                if password_Choice == 'tp':
+                if password_Choice == 'ty':
                     password = input("Enter Your Own Password\n")
                     break
-                elif password_Choice == 'gp':
+                elif password_Choice == 'gen':
                     password = generate_Password()
                     break
                 else:
@@ -106,27 +106,27 @@ def main():
             print('\n')
             print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
             print('\n')
-        elif short_code == "dc":
+        elif short_code == "disp":
             if display_accounts_details():
-                print("Here's your list of acoounts: ")
+                print("Here's your list of account: ")
                  
-                print('*' * 100)
-                print('_'* 100)
+                print('*' * 70)
+                print('_'* 70)
                 for account in display_accounts_details():
                     print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
-                    print('_'* 100)
-                print('*' * 100)
+                    print('_'* 70)
+                print('*' * 70)
             else:
                 print("You don't have any credentials saved yet..........")
-        elif short_code == "fc":
+        elif short_code == "find":
             print("Enter the Account Name you want to search for")
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
                 print(f"Account Name : {search_credential.account}")
-                print('-' * 100)
+                print('-' * 70)
                 print(f"User Name: {search_credential.userName} Password :{search_credential.password}")
-                print('-' * 100)
+                print('-' * 70)
             else:
                 print("That Credential does not exist")
                 print('\n')
@@ -143,7 +143,7 @@ def main():
             else:
                 print("That Credential you want to delete does not exist in your store yet")
 
-        elif short_code == 'gp':
+        elif short_code == 'gen':
 
             password = generate_Password()
             print(f" {password} Has been generated succesfull. You can proceed to use it to your account")
