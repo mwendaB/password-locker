@@ -29,6 +29,9 @@ def save_credentials(credentials):
 def display_accounts_details():
     return Credentials.display_credentials()
 
+def delete_credential(credentials):
+    credentials.delete_credentials()
+
 
 
 
