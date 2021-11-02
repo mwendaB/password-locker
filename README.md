@@ -26,7 +26,11 @@ git clone https://github.com/mwendaB/password-locker
 ```
 
 * No web dependencies needed.
-* Run in terminal using the command $ python3 passwordlock.py
+* After cloning the repo you can either deside to run it on your visual studio codes terminal or the main Terminal
+* Run in terminal using the command:
+```
+ python3 passwordlock.py
+ ```
 
 ## Known Bugs
 I havent encountered any bugs.
