@@ -24,7 +24,6 @@ This is a PasswordLocker application that serves to create users' accounts and e
 * No web dependencies needed.
 * Run in terminal using the command $ python3 passwordlock.py
 
-
 ## Known Bugs
 I havent encountered any bugs.
 INcase you come across any feel free to correct me via Email.
