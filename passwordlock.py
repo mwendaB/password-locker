@@ -1,3 +1,4 @@
+from unittest.main import main
 from user import User, Credentials
 
 def create_new_user(username,password):
@@ -37,7 +38,7 @@ def copy_password(account):
     return Credentials.copy_password(account)
 
 
-def passlocker():
+def main():
     print("Welcome to your Accounts Password locker...\n Please enter one of the following to proceed.\n ca ---  Create New Account  \n li ---  have an existing account  \n")
     short_code=input("").lower().strip()
     if short_code == "ca":
@@ -45,7 +46,7 @@ def passlocker():
         print('*' * 50)
         username = input("User_name: ")
         while True:
-            print(" Ty - To type your own pasword:\n gen - To generate random Password")
+            print(" ty - To type your own pasword:\n gen - To generate random Password")
             password_Choice = input().lower().strip()
             if password_Choice == 'ty':
                 password = input("Enter Password\n")
@@ -80,7 +81,7 @@ def passlocker():
             print("Your Account username")
             userName = input()
             while True:
-                print(" ty - To type your own pasword if you already have an account:\n gen - To generate random Password")
+                print(" ty - To enter your own pasword if you already have an account:\n gen - To auto generate Password")
                 password_Choice = input().lower().strip()
                 if password_Choice == 'ty':
                     password = input("Enter Your Own Password\n")
@@ -105,7 +106,7 @@ def passlocker():
                     print('_'* 70)
                 print('*' * 70)
             else:
-                print("You don't have any credentials saved yet..........")
+                print("You don't have any credentials")
         elif short_code == "find":
             print("Enter the Account Name you want to search for")
             search_name = input().lower()
@@ -126,22 +127,22 @@ def passlocker():
                 print("_"*20)
                 search_credential.delete_credentials()
                 print('\n')
-                print(f"Your stored credentials for : {search_credential.account} successfully deleted!!!")
+                print(f"Your credentials for : {search_credential.account} deleted successfully.")
                 print('\n')
             else:
-                print("That Credential you want to delete does not exist in your store yet")
+                print("That Credential  does not exist")
 
         elif short_code == 'gen':
 
             password = generate_Password()
             print(f" {password} Has been generated succesfull. You can proceed to use it to your account")
         elif short_code == 'ex':
-            print("Thanks for using password locker.. See you next time!")
+            print("Thanks for using password locker.")
             break
         else:
-            print("Wrong entry... Check your entry again and let it match those in the menu")
+            print("Check your entry again and let it match those in the menu")
     else:
         print("Please enter a valid input to continue")
 
 if __name__ == '__main__':
-    passlocker()
+    main()
