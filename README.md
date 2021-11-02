@@ -19,8 +19,12 @@ This is a PasswordLocker application that serves to create users' accounts and e
 |Delete credential that you don't want anymore|Enter ```del```|Enter the account name of the Credentials you want to delete and returns true if the account has been deleted and false if the account doesn't exixt|
 |Exit the application| Enter ```ex```| The application exits| 
 ## Setup/Installation Requirements
-* Open your terminal
-* Clone the repo using this url https://github.com/mwendaB/password-locker
+Open your terminal
+* Run
+```
+git clone https://github.com/mwendaB/password-locker
+```
+
 * No web dependencies needed.
 * Run in terminal using the command $ python3 passwordlock.py
 
