@@ -1,4 +1,4 @@
-from user import User, Credential
+from user import User, Credentials
 
 
 
@@ -21,26 +21,26 @@ def authenticate_user(first_name, password):
 
 
 def generate_password():
-    generate_password = Credential.generate_password()
+    generate_password = Credentials.generate_password()
     return generate_password
 
 
 def create_credential(user_name, social_media, account_name, password):
-    new_credential = Credential(
+    new_credential = Credentials(
         user_name, social_media, account_name, password)
     return new_credential
 
 
 def save_credential(credential):
-    Credential.save_credentials(credential)
+    Credentials.save_credentials(credential)
 
 
 def display_credentials():
-    return Credential.display_credentials()
+    return Credentials.display_credentials()
 
 
 def copy_password(social_media):
-    return Credential.copy_password(social_media)
+    return Credentials.copy_password(social_media)
 
 
 def main():

@@ -1,96 +1,93 @@
 import unittest
-import pyperclip
+from passwordlock import User, Credentials
 
-from user import User, Credential
 
 
 class TestUser(unittest.TestCase):
     def setUp(self):
-        self.new_user = User('Brian', 'Mwenda', 'mwendaB')
+        self.new_user = User('Brian', 'MwendaB')
 
 
-
-    def test_init_(self):
-        self.assertEqual(self.new_user.first_name, 'Brian')
-        self.assertEqual(self.new_user.last_name, 'Mwenda')
-        self.assertEqual(self.new_user.password, 'mwendaB')
+    def test_init(self):
+        self.assertEqual(self.new_user.username, 'Brian')
+        self.assertEqual(self.new_user.password, 'MwendaB')
 
 
     def test_save_user(self):
         self.new_user.save_user()
         self.assertEqual(len(User.users_list), 1)
 
-    def test_save_multiple_user(self): 
+    # def test_save_multiple_user(self): 
        
-        self.new_user.save_user()
-        test_user = User("Eugine", "Abongo", "fozar") 
-        test_user.save_user()
-        self.assertEqual(len(User.users_list), 2)
+    #     self.new_user.save_user()
+    #     test_user = User("Eugine", "Abongo", "fozar") 
+    #     test_user.save_user()
+    #     self.assertEqual(len(User.users_list), 2)
     
-    def test_delete_user(self): 
-        self.new_user.save_user()
-        test_user = User("Eugine", "Abongo", "fozar") 
-        test_user.save_user()
-        self.new_contact.delete_contact()
-        self.assertEqual(len(User.contact_list), 1) 
+    # def test_delete_user(self): 
+    #     self.new_user.save_user()
+    #     test_user = User("Eugine", "Abongo", "fozar") 
+    #     test_user.save_user()
+    #     self.new_contact.delete_contact()
+    #     self.assertEqual(len(User.contact_list), 1) 
 
 
 
 class TestCredentials(unittest.TestCase):
 
 
-    def test_confirm_user(self):
-        
-        self.new_user = User('Brian', 'Mwenda', 'mwendaB')
-        self.new_user.save_user()
-        userX = User('Brian', 'Mwenda', 'mwendaB')
-        userX.save_user()
-        active_user = Credential.confirm_user('Brian', 'mwendaB')
-        self.assertTrue(active_user)
-    
     def setUp(self):
-       
-        self.new_credential = Credential(
-            'Eugine', 'Instagram', 'Abongo', 'fozar')
+        self.new_credential = Credentials('Email', 'Brian', 'MwendaB' )
 
-
-    def test__init__(self):
-        self.assertEqual(self.new_credential.user_name, 'Eugine')
-        self.assertEqual(self.new_credential.social_media, 'Instagram')
-        self.assertEqual(self.new_credential.account_name, 'Abongo')
-        self.assertEqual(self.new_credential.password, 'fozar')
-
-    def test_save_credentials(self):
-        self.new_credential.save_credentials()
-        self.assertEqual(len(Credential.credentials_list), 1)
+    def test_init(self):
+        self.assertEqual(self.new_credential.account, 'Email')
+        self.assertEqual(self.new_credential.userName, 'Brian')
+        self.assertEqual(self.new_credential.password,'MwendaB')
+    
+    
+    def save_credential_test(self):
+        self.new_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
     def tearDown(self):
-        User.users_list = []
-        Credential.credentials_list = []
+        Credentials.credentials_list = []
+
+
+    def test_save_many_accounts(self):
+        self.new_credential.save_details()
+        test_credential = Credentials("Instagram","Eugine","fozar") 
+        test_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),2)
+   
      
     
-    def test_display_credentials(self):
-        self.new_credential.save_credentials()
-        instagram = Credential('Eugine', 'instagram', 'Abong', 'fozar')
-        instagram.save_credentials()
-        self.assertEqual(Credential.display_credentials(),
-                         Credential.credentials_list)
+    def test_delete_credential(self):
+        self.new_credential.save_details()
+        test_credential = Credentials("Instagram","Eugine","fozar")
+        test_credential.save_details()
+
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
 
-    def test_search_social_media(self):
-        self.new_credential.save_credentials()
-        instagram = Credential('Eugine', 'instagram', 'Abong', 'fozar')
-        instagram.save_credentials()
-        credential_exists = Credential.search_social_media('Instagram')
-        self.assertEqual(credential_exists, instagram)
+    def test_find_credentials(self):
+        self.new_credential.save_details()
+        test_credential = Credentials("Instagram","Eugine","fozar") 
+        test_credential.save_details()
 
-    def test_copy_password(self):  
-        self.new_credential.save_credentials()
-        instagram = Credential('Eugine', 'Instagram', 'Abong', 'fozar')
-        instagram.save_credentials()
-        Credential.copy_password('instagram')
-        self.assertEqual(self.new_credential.password, pyperclip.paste())
-        
+        the_credential = Credentials.find_credential("Instagram")
+
+        self.assertEqual(the_credential.account,test_credential.account)
+
+    def test_credential_exist(self):
+        self.new_credential.save_details()
+        the_credential = Credentials("Instagram", "Eugine", "fozar")  
+        the_credential.save_details()
+        credential_is_found = Credentials.if_credential_exist("Instagram")
+        self.assertTrue(credential_is_found)
+
+    def test_display_all_saved_credentials(self):
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
 if __name__ == '__main__':
     unittest.main()
