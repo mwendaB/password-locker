@@ -1,10 +1,10 @@
 # Password-Locker
 This app has been created using python3.9.7
-## Author
-Brian Mwenda
+#### Author
+Brian Mwenda 24th october 2021
 
 ## Description
-This is a command line app that generates accounts where a user can log in, create or delete their accounts.
+This is a PasswordLocker application that serves to create users' accounts and even be able to display them. All this is possible by running short commands on the terminal which the user is met with on running python3 passwordlock.py on the terminal.
 
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
