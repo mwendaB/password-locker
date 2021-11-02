@@ -58,7 +58,7 @@ def main():
                 print("Invalid password please try again")
         save_user(create_new_user(username,password))
         print("*"*70)
-        print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}")
+        print(f"Hello {username}, Account has been created succesfully! Your password is: {password}")
         print("*"*70)
     elif short_code == "li":
         print("*"*70)
@@ -98,7 +98,6 @@ def main():
         elif short_code == "disp":
             if display_accounts_details():
                 print("Here's your list of acoounts: ")
-                 
                 print('*' * 70)
                 print('_'* 70)
                 for account in display_accounts_details():
@@ -133,11 +132,10 @@ def main():
                 print("That Credential  does not exist")
 
         elif short_code == 'gen':
-
             password = generate_Password()
             print(f" {password} Has been generated succesfull. You can proceed to use it to your account")
         elif short_code == 'ex':
-            print("Thanks for using password locker.")
+            print("Thank you for using password locker.")
             break
         else:
             print("Check your entry again and let it match those in the menu")
