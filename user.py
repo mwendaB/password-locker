@@ -45,31 +45,30 @@ class Credentials:
     
 
     def delete_credentials(self):
-       
         Credentials.credentials_list.remove(self)
     
-    def generate_password():
-        pwchar = string.printable
-        length = int(input('Enter password length desired: '))
-        generate_password = ''
-        for pwchar in range(length):
-            generate_password += random.choice(pwchar)
-        return generate_password
+    # def generate_password():
+    #     pwchar = string.printable
+    #     length = int(input('Enter password length desired: '))
+    #     generate_password = ''
+    #     for pwchar in range(length):
+    #         generate_password += random.choice(pwchar)
+    #     return generate_password
 
     
  
  
 
     @classmethod
-    def display_credentials(cls):
-        return cls.credentials_list
-    
-    @classmethod
-    def search_social_media(cls, social_media):
-        
+    def find_credential(cls, account):
         for credential in cls.credentials_list:
-            if credential.social_media == social_media:
+            if credential.account == account:
                 return credential
+    
+    @classmethod
+    def copy_password(cls,account):
+        found_credentials = Credentials.find_credential(account)
+        pyperclip.copy(found_credentials.password)
     
     @classmethod 
     def copy_password(cls, social_media):
