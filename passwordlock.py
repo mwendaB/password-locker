@@ -1,68 +1,94 @@
 from user import User, Credentials
 
-
-
 def create_new_user(username,password):
+    '''
+    It creates a function to create a new user with a username and password
+    '''
     new_user = User(username,password)
     return new_user
 
 def save_user(user):
+    '''
+    It creates a function to save a new user
+    '''
     user.save_user()
-
-
 def display_user():
+    """
+    It creates a function to display existing user
+    """
     return User.display_user()
-
-
 def login_user(username,password):
+    """
+    It creates a function that checks whether a user exist and then login the user in.
+    """
+  
     check_user = Credentials.verify_user(username,password)
     return check_user
 
-
 def create_new_credential(account,userName,password):
+    """
+    Function that creates new credentials for a given user account
+    """
     new_credential = Credentials(account,userName,password)
     return new_credential
-
 def save_credentials(credentials):
-    credentials.save_details()
-
+    """
+    Function to save Credentials to the credentials list
+    """
+    credentials. save_details()
 def display_accounts_details():
+    """
+    Function that returns all the saved credential.
+    """
     return Credentials.display_credentials()
 
 def delete_credential(credentials):
+    """
+    Function to delete a Credentials from credentials list
+
+    """
     credentials.delete_credentials()
 
 def find_credential(account):
+    """
+    Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+    """
     return Credentials.find_credential(account)
-
 def check_credendtials(account):
+    """
+    Function that check if a Credentials exists with that account name and return true or false
+
+    """
     return Credentials.if_credential_exist(account)
 
-
-
 def generate_Password():
+    '''
+    generates a random password for the user.
+    '''
     auto_password=Credentials.generatePassword()
     return auto_password
-
-
 def copy_password(account):
+    """
+    A funct that copies the password using the pyperclip framework
+    We import the framework then declare a function that copies the emails.
+    """
     return Credentials.copy_password(account)
 
 
-def main():
-    print("Welcome to your Accounts Password locker...\n Please enter one of the following to proceed.\n ca ---  Create New Account  \n li ---  Have An Account  \n")
+def passlocker():
+    print("Hello Welcome to your Accounts Password Store...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
     short_code=input("").lower().strip()
     if short_code == "ca":
         print("Sign Up")
         print('*' * 50)
         username = input("User_name: ")
         while True:
-            print(" ty - To type your own pasword:\n gen - To generate random Password")
+            print(" TP - To type your own pasword:\n GP - To generate random Password")
             password_Choice = input().lower().strip()
-            if password_Choice == 'ty':
+            if password_Choice == 'tp':
                 password = input("Enter Password\n")
                 break
-            elif password_Choice == 'gen':
+            elif password_Choice == 'gp':
                 password = generate_Password()
                 break
             else:
@@ -82,7 +108,7 @@ def main():
             print(f"Hello {username}.Welcome To PassWord Locker Manager")  
             print('\n')
     while True:
-        print("Use these short codes:\n cc - Create a new credential \n disp - Display Credentials \n find - Find a credential \n gen - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
+        print("Use these short codes:\n CC - Create a new credential \n DC - Display Credentials \n FC - Find a credential \n GP - Generate A randomn password \n D - Delete credential \n EX - Exit the application \n")
         short_code = input().lower().strip()
         if short_code == "cc":
             print("Create New Credential")
@@ -92,12 +118,12 @@ def main():
             print("Your Account username")
             userName = input()
             while True:
-                print(" ty - To type your own pasword if you already have an account:\n gen - To generate random Password")
+                print(" TP - To type your own pasword if you already have an account:\n GP - To generate random Password")
                 password_Choice = input().lower().strip()
-                if password_Choice == 'ty':
+                if password_Choice == 'tp':
                     password = input("Enter Your Own Password\n")
                     break
-                elif password_Choice == 'gen':
+                elif password_Choice == 'gp':
                     password = generate_Password()
                     break
                 else:
@@ -106,27 +132,27 @@ def main():
             print('\n')
             print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
             print('\n')
-        elif short_code == "disp":
+        elif short_code == "dc":
             if display_accounts_details():
-                print("Here's your list of account: ")
+                print("Here's your list of acoounts: ")
                  
-                print('*' * 70)
-                print('_'* 70)
+                print('*' * 100)
+                print('_'* 100)
                 for account in display_accounts_details():
                     print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
-                    print('_'* 70)
-                print('*' * 70)
+                    print('_'* 100)
+                print('*' * 100)
             else:
                 print("You don't have any credentials saved yet..........")
-        elif short_code == "find":
+        elif short_code == "fc":
             print("Enter the Account Name you want to search for")
             search_name = input().lower()
             if find_credential(search_name):
                 search_credential = find_credential(search_name)
                 print(f"Account Name : {search_credential.account}")
-                print('-' * 70)
+                print('-' * 100)
                 print(f"User Name: {search_credential.userName} Password :{search_credential.password}")
-                print('-' * 70)
+                print('-' * 100)
             else:
                 print("That Credential does not exist")
                 print('\n')
@@ -143,7 +169,7 @@ def main():
             else:
                 print("That Credential you want to delete does not exist in your store yet")
 
-        elif short_code == 'gen':
+        elif short_code == 'gp':
 
             password = generate_Password()
             print(f" {password} Has been generated succesfull. You can proceed to use it to your account")
@@ -153,7 +179,7 @@ def main():
         else:
             print("Wrong entry... Check your entry again and let it match those in the menu")
     else:
-        print("Please enter a valid input to continue")	
-		 
+        print("Please enter a valid input to continue")
+
 if __name__ == '__main__':
-	main()
+    passlocker()
