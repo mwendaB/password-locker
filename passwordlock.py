@@ -19,20 +19,16 @@ def login_user(username,password):
     return check_user
 
 
-def authenticate_user(first_name, password):
-    confirm_user = User.confirm_user(first_name, password)
-    return confirm_user
-
+def create_new_credential(account,userName,password):
+    new_credential = Credentials(account,userName,password)
+    return new_credential
 
 def generate_password():
     generate_password = Credentials.generate_password()
     return generate_password
 
 
-def create_credential(user_name, social_media, account_name, password):
-    new_credential = Credentials(
-        user_name, social_media, account_name, password)
-    return new_credential
+
 
 
 def save_credential(credential):
