@@ -23,10 +23,11 @@ def create_new_credential(account,userName,password):
     new_credential = Credentials(account,userName,password)
     return new_credential
 
-def generate_password():
-    generate_password = Credentials.generate_password()
-    return generate_password
+def save_credentials(credentials):
+    credentials.save_details()
 
+def display_accounts_details():
+    return Credentials.display_credentials()
 
 
 
