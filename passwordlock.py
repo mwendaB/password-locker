@@ -32,6 +32,11 @@ def display_accounts_details():
 def delete_credential(credentials):
     credentials.delete_credentials()
 
+def find_credential(account):
+    return Credentials.find_credential(account)
+
+def check_credendtials(account):
+    return Credentials.if_credential_exist(account)
 
 
 
