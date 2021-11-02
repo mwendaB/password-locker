@@ -1,7 +1,8 @@
 # Password-Locker
 This app has been created using python3.9.7
 #### Author
-Brian Mwenda 24th october 2021
+Brian Mwenda 
+#### created on 24th october 2021
 
 ## Description
 This is a PasswordLocker application that serves to create users' accounts and even be able to display them. All this is possible by running short commands on the terminal which the user is met with on running python3 passwordlock.py on the terminal.
