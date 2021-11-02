@@ -7,7 +7,13 @@ Brian Mwenda
 ## Description
 This is a PasswordLocker application that serves to create users' accounts and even be able to display them. All this is possible by running short commands on the terminal which the user is met with on running python3 passwordlock.py on the terminal.
 
-## Behaviour Driven Development
+## Behavior-driven development
+- These are the behaviours that the application implements for use by a user.
+## As a user I would like:
+- To create an account with my details - log in and password
+- Store my existing login credentials
+- Generate a password for a new credential/account
+
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
 |Open the application on the terminal | Run the command ```$ ./passwordlocker.py```|Hello Welcome to your Password locker... <br>* ca ---  Create New Account * li ---  Have An Account |
