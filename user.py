@@ -23,7 +23,7 @@ class User:
         return cls.user_list
 
 
-class Credential:
+class Credentials:
     
     
     credentials_list = []
@@ -34,9 +34,19 @@ class Credential:
             if(user.username == username and user.password == password):
                     a_user == user.username
         return a_user
+    
+    def __init__(self,account,userName, password):
+        self.account = account
+        self.userName = userName
+        self.password = password
+    
+    def save_details(self):
+        Credentials.credentials_list.append(self)
+    
 
-    def save_credentials(self):
-        Credential.credentials_list.append(self)
+    def delete_credentials(self):
+       
+        Credentials.credentials_list.remove(self)
     
     def generate_password():
         pwchar = string.printable
