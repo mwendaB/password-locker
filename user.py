@@ -71,12 +71,13 @@ class Credentials:
         pyperclip.copy(found_credentials.password)
     
     @classmethod 
-    def copy_password(cls, social_media):
-       
-        collect_password = Credential.search_social_media(social_media)
-        return pyperclip.copy(collect_password.password) 
+    def if_credential_exist(cls, account):
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return True
+        return False
+    
 
-
-
+    
 
 
