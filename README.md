@@ -6,6 +6,17 @@ Brian Mwenda
 ## Description
 This is a command line app that generates accounts where a user can log in, create or delete their accounts.
 
+## Behaviour Driven Development
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+|Open the application on the terminal | Run the command ```$ ./passwordlocker.py```|Hello Welcome to your Password locker... <br>* ca ---  Create New Account * li ---  Have An Account |
+|Select  c| input username and password| Hello ```username```, Your account has been created succesfully! Your password is: ```password```|
+|Select li  | Enter your password and username you signed up with| Abbreviations menu to help you navigate through the application|
+|Store a new credential in the application| Enter ```CC```|Enter Account, username, password<br>choose ```ty``` to enter your password or ```gen``` for the application to generate a password for you |
+|Display all stored credentials | Enter ```disp```|A list of all credentials that has been stored or ```You don't have any credentials``` |
+|Find a stored credential based on account name|Enter ```find```| Enter the Account Name you want to find for and returns the account details|
+|Delete credential that you don't want anymore|Enter ```del```|Enter the account name of the Credentials you want to delete and returns true if the account has been deleted and false if the account doesn't exixt|
+|Exit the application| Enter ```ex```| The application exits| 
 ## Setup/Installation Requirements
 * Open your terminal
 * Clone the repo using this url https://github.com/mwendaB/password-locker
